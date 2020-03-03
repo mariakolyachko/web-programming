@@ -4,8 +4,8 @@
 
   header {
     background: white;
-    padding: 10px; 
- 		font-size: 30px;
+    padding: 0px 1%; 
+ 		font-size: 180%;
  		text-align: middle;
   }
 
@@ -41,7 +41,7 @@
     position: absolute;
     top: 70%;
     left: 7%;
-    font-size: 30px;
+    font-size: 160%;
   }
 
   .profile-logout {
@@ -178,6 +178,18 @@
     width: 25%;
     padding: 2%
   }
+
+  ul.feed-post-tags {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline;
+  }
+
+  li.feed-post-tag {
+    float: left;
+  }
+
   .feed-post-tag:hover {
     color: #37B6CE;
   }
