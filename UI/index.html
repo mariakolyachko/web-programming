@@ -5,23 +5,21 @@
   
     <title>Twittaria</title>
   
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
   </head> 
 
   <body>
 
     <header>
-      <img src="images/logo" alt="logo" class="logo">
-
+      <img src="images/logo" alt="logo" class="logo"/>
       Twittaria
     </header>
 
    
      <main>
        <div class="profile">
-         <img src="users/mariakolyachko/photo.jpg" alt="profile photo" class="profile-photo">
+         <img src="users/mariakolyachko/photo.jpg" alt="profile photo" class="profile-photo"/>
          <button class="profile-logout">Log out</button>
-         <br/>
          <div class="profile-username">@mariakolyachko</div>
        </div>
 
@@ -29,359 +27,368 @@
        <div class="feed">
          <h1 align="center"> Home </h1>
 
-         <article class="feed-post">
-           <img src="users/mariakolyachko/photo.jpg" class="feed-post-photo">
-           <span class="feed-post-info">
-             <span class="feed-post-info-username">@mariakolyachko</span>  
-             <date>now</date>
-           </span>
-           <div class="feed-post-add">
-             What's happening?
-             <div>
-               <button class="button feed-post-add-image">
-                 <img src="icons/image" alt="upload picture" class="feed-post-add-image" />
-               </button>
-               <button class="feed-post-add-tweet">
-                 Tweet
-               </button>
-             </div>
-           </div>
-         </article>
+         <form class="feed-post">
+             <img src="users/mariakolyachko/photo.jpg" alt="profile photo" class="feed-post-photo"/>
 
-         <article class="feed-post">
-           <div class="feed-post-avatar">
-             <img src="users/mariakolyachko/photo.jpg" class="feed-post-photo">
-           </div> 
-           
-           <div class="feed-post-text">
              <span class="feed-post-info">
                <span class="feed-post-info-username">@mariakolyachko</span>  
-               <date>02.03.20  19:38</date>
+               <date>now</date>
              </span>
-             <br>
-               самое время вспомнить про твиттер, нужно же понять, что нам нужно писать на уп
-             <br>
-             <span class="feed-post-tag">#bsu</span>
-             <span class="feed-post-tag">#is</span>
-             <span class="feed-post-tag">#love</span>
-           </div>
-           <div class="feed-post-buttons">
-             <button class="button feed-post-buttons-delete">
-               <img src="icons/delete.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-edit">
-               <img src="icons/edit.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-like">
-               <img src="icons/like.jpg" style="width: 50px"/>
-             </button>
-           </div>
-         </article>
 
-         <article class="feed-post">
-           <div class="feed-post-avatar">
-             <img src="users/veronikchaa/photo.jpg" class="feed-post-photo">
-           </div>
+             <div class="feed-post-add">
+               What's happening?
+               <div class="buttons">
+                 <button class="button feed-post-add-image">
+                   <img src="icons/image" alt="upload picture" class="feed-post-add-image" />
+                 </button>
 
-           <div class="feed-post-text">  
-             <span class="feed-post-info">
-               <span class="feed-post-info-username">@veronikchaa</span>
-               <date>29.02.20 23:09</date>
-             </span>
-             <br/>
-               Считаю определители методом Лагранжа!
-               <br/>
-               Потому что могу себе позволить!
-             <br/>
-             <span class="feed-post-tag">#det</span>
-             <span class="feed-post-tag">#matrix</span>
-             <span class="feed-post-tag">#love</span>
-           </div>  
+                 <button class="feed-post-add-tweet">
+                   Tweet
+                 </button>
+               </div>
+             </div>
+           </form>
 
-           <div class="feed-post-buttons">
-             <button class="button feed-post-buttons-delete">
-               <img src="icons/delete.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-edit">
-               <img src="icons/edit.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-like">
-               <img src="icons/like.jpg" style="width: 50px"/>
-             </button>
-           </div> 
-         </article>
-
-         <article class="feed-post">
-           <div class="feed-post-avatar">
-             <img src="users/ar_kud/photo.jpg" class="feed-post-photo">  
-           </div>  
-
-           <div class="feed-post-text">
-             <span class="feed-post-info">
-               <span class="feed-post-info-username">@ar_kud</span>
-               <date>23.02.20 00:00</date>
-             </span>
-             <br/>
-               Это всё сахарок
-             <br/>
-             <span class="feed-post-tag">#sugar</span>
-             <span class="feed-post-tag">#ugar</span>
-             <span class="feed-post-tag">#notтоксик</span>
-           </div>
-
-           <div class="feed-post-buttons">
-             <button class="button feed-post-buttons-delete">
-               <img src="icons/delete.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-edit">
-               <img src="icons/edit.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-like">
-               <img src="icons/like.jpg" style="width: 50px"/>
-             </button>
-           </div>       
-         </article>
-
-         <article class="feed-post">
-           <div class="feed-post-avatar">
-             <img src="users/sstrazdina/photo.jpg" class="feed-post-photo">
-           </div>  
-
-           <div class="feed-post-text">
-             <span class="feed-post-info">
-               <span class="feed-post-info-username">@sstrazdina</span>
-               <date>19.02.20 15:08</date>
-             </span>
-             <br>
-              Нет, я не злой председ, я просто котик :)
-             <br>
-             <span class="feed-post-tag">#студсоюз</span>
-             <span class="feed-post-tag">#dreamteam_famcs</span>
-             <span class="feed-post-tag">#biglove</span>
-           </div>
-
-           <div class="feed-post-buttons">
-             <button class="button feed-post-buttons-delete">
-               <img src="icons/delete.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-edit">
-               <img src="icons/edit.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-like">
-               <img src="icons/like.jpg" style="width: 50px"/>
-             </button>
-           </div>        
-         </article>
-
-         <article class="feed-post">
-           <div class="feed-post-avatar">
-             <img src="users/polina_volchetskaya/photo.jpg" class="feed-post-photo">
-           </div>  
-
-           <div class="feed-post-text">
-             <span class="feed-post-info">
-               <span class="feed-post-info-username">@polina_volchetskaya</span>
-               <date>13.02.20 23:48</date>
-             </span>
-             <br>
-               хочу уже танцевать под безумие на афтере мисс
-             <br>
-             <span class="feed-post-tag">#afterparty</span>
-             <span class="feed-post-tag">#dance</span>
-             <span class="feed-post-tag">#mis2020</span>
-           </div>
-
-           <div class="feed-post-buttons">
-             <button class="button feed-post-buttons-delete">
-               <img src="icons/delete.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-edit">
-               <img src="icons/edit.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-like">
-               <img src="icons/like.jpg" style="width: 50px"/>
-             </button>
-           </div>      
-         </article>
-
-         <article class="feed-post">
-           <div class="feed-post-avatar">  
-             <img src="users/pavel_tyl/photo.jpg" class="feed-post-photo">
-           </div>
-
-           <div class="feed-post-text">
-             <span class="feed-post-info">
-               <span class="feed-post-info-username">@pavel_tyl</span>
-               <date>22.01.20 13.46</date>
-             </span>
-             <br>
-               я тебя конечно тоже люблю, но валяюсь с простудой)
-             <br>
-             <span class="feed-post-tag">#harassment</span>
-             <span class="feed-post-tag">#afterparty</span>
-             <span class="feed-post-tag">#love</span>
-           </div>
-           
-           <div class="feed-post-buttons">
-             <button class="button feed-post-buttons-delete">
-               <img src="icons/delete.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-edit">
-               <img src="icons/edit.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-like">
-               <img src="icons/like.jpg" style="width: 50px"/>
-             </button>
-           </div>        
-         </article>
-
-         <article class="feed-post">
-           <div class="feed-post-avatar">  
-             <img src="users/mariakolyachko/photo.jpg" class="feed-post-photo">
-           </div>
-
-           <div class="feed-post-text">
-             <span class="feed-post-info">
-               <span class="feed-post-info-username">@mariakolyachko</span>
-               <date>20.01.20 04.03</date>
-             </span>
-             <br>
-               -Вероника, хочешь апельсин?
+         <div class="feed-posts">
+           <article class="feed-post">
+             <div class="feed-post-avatar">
+               <img src="users/mariakolyachko/photo.jpg" alt="profile photo" class="feed-post-photo" />
+             </div> 
+             
+             <div class="feed-post-text">
+               <span class="feed-post-info">
+                 <span class="feed-post-info-username">@mariakolyachko</span>  
+                 <date>02.03.20  19:38</date>
+               </span>
                <br>
-               -Я хочу умереть :(
-             <br>
-             <span class="feed-post-tag">#death</span>
-             <span class="feed-post-tag">#obshchaga</span>
-             <span class="feed-post-tag">#love</span>
-           </div>
-           
-           <div class="feed-post-buttons">
-             <button class="button feed-post-buttons-delete">
-               <img src="icons/delete.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-edit">
-               <img src="icons/edit.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-like">
-               <img src="icons/like.jpg" style="width: 50px"/>
-             </button>
-           </div>        
-         </article>
+                 самое время вспомнить про твиттер, нужно же понять, что нам нужно писать на уп
+               <br>
+               <span class="feed-post-tag">#bsu</span>
+               <span class="feed-post-tag">#is</span>
+               <span class="feed-post-tag">#love</span>
+             </div>
 
-         <article class="feed-post">
-           <div class="feed-post-avatar">  
-             <img src="users/al_taraikovich/photo.jpg" class="feed-post-photo"> 
-           </div>  
+             <div class="feed-post-buttons">
+               <button class="button feed-post-buttons-delete">
+                 <img src="icons/delete.jpg" alt="delete button" />
+               </button>
+               <button class="button feed-post-buttons-edit">
+                 <img src="icons/edit.jpg" alt="edit button" />
+               </button>
+               <button class="button feed-post-buttons-like">
+                 <img src="icons/like.jpg" alt="like button" />
+               </button>
+             </div>
+           </article>
 
-           <div class="feed-post-text">
-             <span class="feed-post-info">
-               <span class="feed-post-info-username">@al_taraikovich</span>
-               <date>19.01.20 13:45</date>
-             </span>
-             <br/>
-               — Слова — это имущество общественное, поэтому их у вас и не должно быть. Вы можете только брать их из общей кучки и использовать по назначению. Желательно по делу. Иначе от них нет никакого толка.
+           <article class="feed-post">
+             <div class="feed-post-avatar">
+               <img src="users/veronikchaa/photo.jpg" class="feed-post-photo">
+             </div>
+
+             <div class="feed-post-text">  
+               <span class="feed-post-info">
+                 <span class="feed-post-info-username">@veronikchaa</span>
+                 <date>29.02.20 23:09</date>
+               </span>
                <br/>
-               Лавка Времени
-             <br/>
-             <span class="feed-post-tag">#words</span>
-             <span class="feed-post-tag">#time</span>
+                 Считаю определители методом Лагранжа!
+                 <br/>
+                 Потому что могу себе позволить!
+               <br/>
+               <span class="feed-post-tag">#det</span>
+               <span class="feed-post-tag">#matrix</span>
+               <span class="feed-post-tag">#love</span>
+             </div>  
+
+             <div class="feed-post-buttons">
+               <button class="button feed-post-buttons-delete">
+                 <img src="icons/delete.jpg" alt="delete button" />
+               </button>
+               <button class="button feed-post-buttons-edit">
+                 <img src="icons/edit.jpg" alt="edit button" />
+               </button>
+               <button class="button feed-post-buttons-like">
+                 <img src="icons/like.jpg" alt="like button" />
+               </button>
+             </div>
+           </article>
+
+           <article class="feed-post">
+             <div class="feed-post-avatar">
+               <img src="users/ar_kud/photo.jpg" class="feed-post-photo">  
+             </div>  
+
+             <div class="feed-post-text">
+               <span class="feed-post-info">
+                 <span class="feed-post-info-username">@ar_kud</span>
+                 <date>23.02.20 00:00</date>
+               </span>
+               <br/>
+                 Это всё сахарок
+               <br/>
+               <span class="feed-post-tag">#sugar</span>
+               <span class="feed-post-tag">#ugar</span>
+               <span class="feed-post-tag">#notтоксик</span>
+             </div>
+
+             <div class="feed-post-buttons">
+               <button class="button feed-post-buttons-delete">
+                 <img src="icons/delete.jpg" alt="delete button" />
+               </button>
+               <button class="button feed-post-buttons-edit">
+                 <img src="icons/edit.jpg" alt="edit button" />
+               </button>
+               <button class="button feed-post-buttons-like">
+                 <img src="icons/like.jpg" alt="like button" />
+               </button>
+             </div>      
+           </article>
+
+           <article class="feed-post">
+             <div class="feed-post-avatar">
+               <img src="users/sstrazdina/photo.jpg" class="feed-post-photo">
+             </div>  
+
+             <div class="feed-post-text">
+               <span class="feed-post-info">
+                 <span class="feed-post-info-username">@sstrazdina</span>
+                 <date>19.02.20 15:08</date>
+               </span>
+               <br>
+                Нет, я не злой председ, я просто котик :)
+               <br>
+               <span class="feed-post-tag">#студсоюз</span>
+               <span class="feed-post-tag">#dreamteam_famcs</span>
+               <span class="feed-post-tag">#biglove</span>
+             </div>
+
+             <div class="feed-post-buttons">
+               <button class="button feed-post-buttons-delete">
+                 <img src="icons/delete.jpg" alt="delete button" />
+               </button>
+               <button class="button feed-post-buttons-edit">
+                 <img src="icons/edit.jpg" alt="edit button" />
+               </button>
+               <button class="button feed-post-buttons-like">
+                 <img src="icons/like.jpg" alt="like button" />
+               </button>
+             </div>       
+           </article>
+
+           <article class="feed-post">
+             <div class="feed-post-avatar">
+               <img src="users/polina_volchetskaya/photo.jpg" class="feed-post-photo">
+             </div>  
+
+             <div class="feed-post-text">
+               <span class="feed-post-info">
+                 <span class="feed-post-info-username">@polina_volchetskaya</span>
+                 <date>13.02.20 23:48</date>
+               </span>
+               <br>
+                 хочу уже танцевать под безумие на афтере мисс
+               <br>
+               <span class="feed-post-tag">#afterparty</span>
+               <span class="feed-post-tag">#dance</span>
+               <span class="feed-post-tag">#mis2020</span>
+             </div>
+
+             <div class="feed-post-buttons">
+               <button class="button feed-post-buttons-delete">
+                 <img src="icons/delete.jpg" alt="delete button" />
+               </button>
+               <button class="button feed-post-buttons-edit">
+                 <img src="icons/edit.jpg" alt="edit button" />
+               </button>
+               <button class="button feed-post-buttons-like">
+                 <img src="icons/like.jpg" alt="like button" />
+               </button>
+             </div>     
+           </article>
+
+           <article class="feed-post">
+             <div class="feed-post-avatar">  
+               <img src="users/pavel_tyl/photo.jpg" class="feed-post-photo">
+             </div>
+
+             <div class="feed-post-text">
+               <span class="feed-post-info">
+                 <span class="feed-post-info-username">@pavel_tyl</span>
+                 <date>22.01.20 13.46</date>
+               </span>
+               <br>
+                 я тебя конечно тоже люблю, но валяюсь с простудой)
+               <br>
+               <span class="feed-post-tag">#harassment</span>
+               <span class="feed-post-tag">#afterparty</span>
+               <span class="feed-post-tag">#love</span>
+             </div>
+             
+             <div class="feed-post-buttons">
+               <button class="button feed-post-buttons-delete">
+                 <img src="icons/delete.jpg" alt="delete button" />
+               </button>
+               <button class="button feed-post-buttons-edit">
+                 <img src="icons/edit.jpg" alt="edit button" />
+               </button>
+               <button class="button feed-post-buttons-like">
+                 <img src="icons/like.jpg" alt="like button" />
+               </button>
+             </div>       
+           </article>
+
+           <article class="feed-post">
+             <div class="feed-post-avatar">  
+               <img src="users/mariakolyachko/photo.jpg" class="feed-post-photo">
+             </div>
+
+             <div class="feed-post-text">
+               <span class="feed-post-info">
+                 <span class="feed-post-info-username">@mariakolyachko</span>
+                 <date>20.01.20 04.03</date>
+               </span>
+               <br>
+                 -Вероника, хочешь апельсин?
+                 <br>
+                 -Я хочу умереть :(
+               <br>
+               <span class="feed-post-tag">#death</span>
+               <span class="feed-post-tag">#obshchaga</span>
+               <span class="feed-post-tag">#love</span>
+             </div>
+             
+             <div class="feed-post-buttons">
+               <button class="button feed-post-buttons-delete">
+                 <img src="icons/delete.jpg" alt="delete button" />
+               </button>
+               <button class="button feed-post-buttons-edit">
+                 <img src="icons/edit.jpg" alt="edit button" />
+               </button>
+               <button class="button feed-post-buttons-like">
+                 <img src="icons/like.jpg" alt="like button" />
+               </button>
+             </div>       
+           </article>
+
+           <article class="feed-post">
+             <div class="feed-post-avatar">  
+               <img src="users/al_taraikovich/photo.jpg" class="feed-post-photo"> 
+             </div>  
+
+             <div class="feed-post-text">
+               <span class="feed-post-info">
+                 <span class="feed-post-info-username">@al_taraikovich</span>
+                 <date>19.01.20 13:45</date>
+               </span>
+               <br/>
+                 — Слова — это имущество общественное, поэтому их у вас и не должно быть. Вы можете только брать их из общей кучки и использовать по назначению. Желательно по делу. Иначе от них нет никакого толка.
+                 <br/>
+                 Лавка Времени
+               <br/>
+               <span class="feed-post-tag">#words</span>
+               <span class="feed-post-tag">#time</span>
+             </div>
+             
+             <div class="feed-post-buttons">
+               <button class="button feed-post-buttons-delete">
+                 <img src="icons/delete.jpg" alt="delete button" />
+               </button>
+               <button class="button feed-post-buttons-edit">
+                 <img src="icons/edit.jpg" alt="edit button" />
+               </button>
+               <button class="button feed-post-buttons-like">
+                 <img src="icons/like.jpg" alt="like button" />
+               </button>
+             </div>     
+           </article>
+
+           <article class="feed-post">
+             <div class="feed-post-avatar">
+               <img src="users/kupajj_oleg_/photo.jpg" class="feed-post-photo">
+             </div>
+
+             <div class="feed-post-text">
+               <span class="feed-post-info">
+                 <span class="feed-post-info-username">@kupajj_oleg_</span>
+                 <date>02.03.20  19:38</date>
+               </span>
+               <br>
+                 Мне вчера такие психоделические сны снились, вы даже не представляете.
+               <br>
+               <span class="feed-post-tag">#dream</span>
+               <span class="feed-post-tag">#team</span>
+               <span class="feed-post-tag">#dresses</span>
+             </div>
+             
+             <div class="feed-post-buttons">
+               <button class="button feed-post-buttons-delete">
+                 <img src="icons/delete.jpg" alt="delete button" />
+               </button>
+               <button class="button feed-post-buttons-edit">
+                 <img src="icons/edit.jpg" alt="edit button" />
+               </button>
+               <button class="button feed-post-buttons-like">
+                 <img src="icons/like.jpg" alt="like button" />
+               </button>
+             </div>       
+           </article>
+
+           <article class="feed-post">
+             <div class="feed-post-avatar">
+               <img src="users/vitonka/photo.jpg" class="feed-post-photo">
+             </div> 
+
+             <div class="feed-post-text">
+               <span class="feed-post-info">
+                 <span class="feed-post-info-username">@vitonka</span>
+                 <date>02.03.20  19:38</date>
+               </span>
+               <br>
+                позвали в жюри, безумно этому рад!
+               <br>
+               <span class="feed-post-tag">#bsu</span>
+               <span class="feed-post-tag">#miss</span>
+               <span class="feed-post-tag">#girls</span>
+             </div>
+             
+             <div class="feed-post-buttons">
+               <button class="button feed-post-buttons-delete">
+                 <img src="icons/delete.jpg" alt="delete button" />
+               </button>
+               <button class="button feed-post-buttons-edit">
+                 <img src="icons/edit.jpg" alt="edit button" />
+               </button>
+               <button class="button feed-post-buttons-like">
+                 <img src="icons/like.jpg" alt="like button" />
+               </button>
+             </div>     
+           </article>
+
+           <div class="feed-post">
+             <button class="feed-next">
+               Next tweets
+             </button>
            </div>
-           
-           <div class="feed-post-buttons">
-             <button class="button feed-post-buttons-delete">
-               <img src="icons/delete.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-edit">
-               <img src="icons/edit.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-like">
-               <img src="icons/like.jpg" style="width: 50px"/>
-             </button>
-           </div>      
-         </article>
-
-         <article class="feed-post">
-           <div class="feed-post-avatar">
-             <img src="users/kupajj_oleg_/photo.jpg" class="feed-post-photo">
-           </div>
-
-           <div class="feed-post-text">
-             <span class="feed-post-info">
-               <span class="feed-post-info-username">@kupajj_oleg_</span>
-               <date>02.03.20  19:38</date>
-             </span>
-             <br>
-               Мне вчера такие психоделические сны снились, вы даже не представляете.
-             <br>
-             <span class="feed-post-tag">#dream</span>
-             <span class="feed-post-tag">#team</span>
-             <span class="feed-post-tag">#dresses</span>
-           </div>
-           
-           <div class="feed-post-buttons">
-             <button class="button feed-post-buttons-delete">
-               <img src="icons/delete.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-edit">
-               <img src="icons/edit.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-like">
-               <img src="icons/like.jpg" style="width: 50px"/>
-             </button>
-           </div>       
-         </article>
-
-         <article class="feed-post">
-           <div class="feed-post-avatar">
-             <img src="users/vitonka/photo.jpg" class="feed-post-photo">
-           </div> 
-
-           <div class="feed-post-text">
-             <span class="feed-post-info">
-               <span class="feed-post-info-username">@vitonka</span>
-               <date>02.03.20  19:38</date>
-             </span>
-             <br>
-              позвали в жюри, безумно этому рад!
-             <br>
-             <span class="feed-post-tag">#bsu</span>
-             <span class="feed-post-tag">#miss</span>
-             <span class="feed-post-tag">#girls</span>
-           </div>
-           
-           <div class="feed-post-buttons">
-             <button class="button feed-post-buttons-delete">
-               <img src="icons/delete.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-edit">
-               <img src="icons/edit.jpg" style="width: 35px"/>
-             </button>
-             <button class="button feed-post-buttons-like">
-               <img src="icons/like.jpg" style="width: 50px"/>
-             </button>
-           </div>      
-         </article>
-
-         <div class="feed-post">
-           <button class="feed-next">
-             Next tweets
-           </button>
-         </div>
+       </div>
      </div>
 
 
-     <div class="filter">
+     <form class="filter">
        <h1 align="center"> Filter: </h1>
+
        <div class="filter-field">
          Name:
          <div class="enter">
            Enter username
          </div>
        </div>
+
        <div class="filter-field">
          Date:
          <button class="filter-date">02.03.20</button>
        </div>
+
        <div class="filter-field">
          Tags:
          <div class="filter-tag"> 
@@ -398,7 +405,7 @@
           +
          </button>
        </div>
-     </div>
+     </form>
    </main>  
 
    <footer align="center">

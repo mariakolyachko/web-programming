@@ -118,6 +118,11 @@
     width: 12%;
   }
 
+  .feed-post-buttons img {
+    object-fit: contain;
+    width: 35px;
+  }
+
   .feed-post-add {
     position: relative;
     font-size: 200%;
@@ -145,7 +150,7 @@
     position: absolute;
     top: 10%;
     left: 90%;
-    width: 5%;
+    width: 35px;
   }
 
   .feed-post-buttons-edit {
@@ -153,7 +158,7 @@
     top: 10%;
     left: 100%;
     margin-left: -20%; 
-    width: 5%;
+    width: 35px;  
   }
 
   .feed-post-buttons-like {
@@ -161,7 +166,7 @@
     left: 100%;
     margin-left: -21%;
     top: 70%;
-    width: 7%;
+    width: 35px;   
   }
 
   .feed-next {
