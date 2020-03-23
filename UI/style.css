@@ -1,12 +1,15 @@
   body {
+    background: black;
     font-family: Caladea;
   }
 
   header {
-    background: white;
+    background: black;
     padding: 0px 1%; 
  		font-size: 180%;
+    color: white;
  		text-align: middle;
+    padding: 3px;
   }
 
   header .logo {
@@ -16,8 +19,8 @@
   }
   
   .profile {
-    background: #F9F5FC;
-    color: #7414B1;
+    background: #2C0143;
+    color: white;
     display: inline-block;
     position: relative;
     vertical-align: top;
@@ -26,6 +29,7 @@
   	height: 200px;
   	border-radius: 10px;
     padding: 15px;
+    margin: 1%;
   }
 
   .profile-photo {
@@ -34,7 +38,7 @@
   	height: 110px;
   	margin: 20px;
   	border-radius: 110px;
-    border: 1px solid #7414B1;
+    border: 1px solid #2C0143;
   }
 
   .profile-username {
@@ -56,22 +60,30 @@
     vertical-align: top;
   }
 
-  .button {
+  .image-button {
+    background: black;
     border: none;
     padding: 0;
   }
 
+  .button:hover {
+    cursor: pointer;
+  }
+
   .feed {
-    background: #F8EEFF;
-    color: #7414B1;
+    background: #242325;
+    color: white;
   	width: 40%;
     border-radius: 20px;
   	display: inline-block;
-    border: 1px solid #BDBABF;
+    border: 4px solid #BDBABF;
+    margin-right: 3px;
+    min-width: 400px;
   }
 
   .feed-post {
-    background: white;
+    background: black;
+    color: #C7C4C8;
     position: relative;
     padding: 10px;
     min-height: 80px;
@@ -88,6 +100,7 @@
   }
 
   .feed-post-info {
+    color: white;
     font-size: 17px;
     margin-top: 10px;
     margin-bottom: 20px;
@@ -126,7 +139,6 @@
   .feed-post-add {
     position: relative;
     font-size: 200%;
-    color: grey;
   }
 
   .feed-post-add-image {
@@ -136,11 +148,11 @@
   }
 
   .feed-post-add-tweet {
-    background: #7414B1;
+    background: #251F2B;
     color: white;
     position: absolute;
     left: 80%;
-    margin-right: 20%;
+    right: 20%;
     top: 60%;
     border-radius: 100px;
     padding: 5px 20px;
@@ -180,6 +192,7 @@
   }
 
   ul.feed-post-tags {
+    color: white;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -197,13 +210,15 @@
 
   .filter {
     position: absolute;
-    background: #F9F5FC;
-    color: #7414B1;
+    background: #242325;
+    color: white;
     vertical-align: top;
     display: inline-block;
     width: 25%;
     border-radius: 10px;
+    border-color: white;
     padding: 10px;
+    margin: 1%;
   }
 
   .filter-field {
@@ -215,7 +230,7 @@
   }
 
   .filter-date {
-    background: #C7B0D5;
+    background: grey;
     border-radius: 60px;
     font-style: italic;
     font-size: 80%;
@@ -233,7 +248,8 @@
 
   .filter-tag {
     display: inline-block;
-    background: #E1D4EA;
+    background: grey;
+    color: white;
     border: 1px solid grey;
     border-radius: 100px;
     font-style: italic;
@@ -254,3 +270,4 @@
     border-radius: 200px;
     border: none;
   }
+
