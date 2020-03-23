@@ -20,7 +20,7 @@
   
   .profile {
     background: #2C0143;
-    color: #7414B1;
+    color: white;
     display: inline-block;
     position: relative;
     vertical-align: top;
@@ -38,7 +38,7 @@
   	height: 110px;
   	margin: 20px;
   	border-radius: 110px;
-    border: 1px solid #7414B1;
+    border: 1px solid #2C0143;
   }
 
   .profile-username {
@@ -71,7 +71,7 @@
   }
 
   .feed {
-    background: #2C0143;
+    background: #242325;
     color: white;
   	width: 40%;
     border-radius: 20px;
@@ -148,7 +148,7 @@
   }
 
   .feed-post-add-tweet {
-    background: #7414B1;
+    background: #251F2B;
     color: white;
     position: absolute;
     left: 80%;
@@ -210,7 +210,7 @@
 
   .filter {
     position: absolute;
-    background: #2C0143;
+    background: #242325;
     color: white;
     vertical-align: top;
     display: inline-block;
@@ -230,7 +230,7 @@
   }
 
   .filter-date {
-    background: #C7B0D5;
+    background: grey;
     border-radius: 60px;
     font-style: italic;
     font-size: 80%;
@@ -248,8 +248,8 @@
 
   .filter-tag {
     display: inline-block;
-    background: #E1D4EA;
-    color: #7414B1;
+    background: grey;
+    color: white;
     border: 1px solid grey;
     border-radius: 100px;
     font-style: italic;
