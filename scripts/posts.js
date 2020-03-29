@@ -187,13 +187,6 @@
 	  }
 	];
 
-	posts.getPosts = getPosts;
-	posts.getPost = getPost;
-	posts.addPost = addPost;
-	posts.editPost = editPost;
-	posts.removePost = removePost;
-
-
 	function getIndex(id, posts) {
 		for (var i = 0; i < posts.length; ++i) {
 			if (posts[i].id === id) {
@@ -220,10 +213,10 @@
 		});
 	}
 
-	function getPosts(skip = 0, top = 10, filterConfig) {
+	function getPosts(skip = 0, top = 10, filterConfig, posts) {
 		var postsFilter = Object.assign({}, standartFilter, filterConfig);
 
-		return this.filter(function(item) {
+		return posts.filter(function(item) {
 									return (postsFilter.author === "all" 
 														|| item.author === postsFilter.author)
 										&& compareDate(item, postsFilter) >= 0
@@ -233,26 +226,26 @@
 							 .slice(skip, skip + top);
 	}
 
-	function getPost(id) {
-		return isExist(id, this) ? this[getIndex(id, this)] : null;
+	function getPost(id, posts) {
+		return isExist(id, posts) ? posts[getIndex(id, posts)] : null;
 	}
 
 	function validatePost(post) {
-		return (post.id != undefined && !isExist(post.id, this))
+		return (post.id != undefined)
 			&& post.description != undefined 
 			&& (post.author != undefined && post.author.length != 0);
 	}
 
-	function addPost(post) {
-		if (validatePost(post)) {
-			this.push(post);
+	function addPost(post, posts) {
+		if (validatePost(post) && !isExist(post.id)) {
+			posts.push(post);
 			return true;
 		} 
 		return false;
 	}
 
-	function editPost(id, changes) {
-		if (!isExist(id, this)) {
+	function editPost(id, changes, posts) {
+		if (!isExist(id, posts)) {
 			return false;
 		}
 
@@ -262,7 +255,7 @@
 				&& change !== "author";
 		}
 
-		var post = Object.assign({}, this.getPost(id));
+		var post = Object.assign({}, posts.getPost(id));
 
 		for (var change of Object.keys(changes)) {
 			if (isMutable(change)) {
@@ -273,15 +266,15 @@
 		}
 
 		if (validatePost(post)) {
-			this[getIndex(id, this)] = Object.assign({}, post);
+			posts[getIndex(id, posts)] = Object.assign({}, post);
 			return true;
 		} else {
 			return false;
 		}
 	}
 
-	function removePost(id) {
-		if (isExist(id, this)) {
-			this.splice(getIndex(id, this), 1);
+	function removePost(id, posts) {
+		if (isExist(id, posts)) {
+			posts.splice(getIndex(id, posts), 1);
 		}
 	}
