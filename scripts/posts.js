@@ -194,8 +194,17 @@
 	posts.removePost = removePost;
 
 
-	function isCorrectId(id, length) {
-		return !isNaN(id) && +id < length;
+	function getIndex(id, posts) {
+		for (var i = 0; i < posts.length; ++i) {
+			if (posts[i].id === id) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	function isExist(id, posts) {
+		return getIndex(id, posts) != -1;
 	}
 
 	function compareDate(first, second) {
@@ -204,23 +213,17 @@
 	} 
 
 	function containTags(item, tags) {
-		for (var tag of tags) {
-			if (!item.tags.find(function(item, index, array) {
+		return tags.every(function(tag) {
+			return item.tags.some(function(item) {
 				return item === tag;
-			})) {
-				return false;
-			}
-		}
-		return true;
+			})
+		});
 	}
 
-	function getPosts(skip = 0, top = 10, filterConfig = {}) {
-		var postsFilter = Object.assign({}, standartFilter);
-		for (var property in filterConfig) {
-			postsFilter[property] = filterConfig[property];	
-		}
+	function getPosts(skip = 0, top = 10, filterConfig) {
+		var postsFilter = Object.assign({}, standartFilter, filterConfig);
 
-		return this.filter(function(item, index, array) {
+		return this.filter(function(item) {
 									return (postsFilter.author === "all" 
 														|| item.author === postsFilter.author)
 										&& compareDate(item, postsFilter) >= 0
@@ -231,11 +234,11 @@
 	}
 
 	function getPost(id) {
-		return isCorrectId(id, this.length) ? this[+id] : null;
+		return isExist(id, this) ? this[getIndex(id, this)] : null;
 	}
 
 	function validatePost(post) {
-		return (post.id != undefined && !isNaN(post.id))
+		return (post.id != undefined && !isExist(post.id, this))
 			&& post.description != undefined 
 			&& (post.author != undefined && post.author.length != 0);
 	}
@@ -249,7 +252,7 @@
 	}
 
 	function editPost(id, changes) {
-		if (!isCorrectId(id, this.length)) {
+		if (!isExist(id, this)) {
 			return false;
 		}
 
@@ -259,9 +262,9 @@
 				&& change !== "author";
 		}
 
-		var post = this.getPost(id);
+		var post = Object.assign({}, this.getPost(id));
 
-		for (var change in changes) {
+		for (var change of Object.keys(changes)) {
 			if (isMutable(change)) {
 				post[change] = changes[change];
 			} else {
@@ -270,7 +273,7 @@
 		}
 
 		if (validatePost(post)) {
-			this[+id] = post;
+			this[getIndex(id, this)] = Object.assign({}, post);
 			return true;
 		} else {
 			return false;
@@ -278,7 +281,7 @@
 	}
 
 	function removePost(id) {
-		if (isCorrectId(id)) {
-			this.splice(+id, 1);
+		if (isExist(id, this)) {
+			this.splice(getIndex(id, this), 1);
 		}
 	}

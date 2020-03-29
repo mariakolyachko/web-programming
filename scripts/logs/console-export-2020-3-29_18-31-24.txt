@@ -1,0 +1,15 @@
+posts.getPost("20");
+null
+posts.getPost("15");
+Object { id: "15", description: "хочу уже танцевать под безумие на афтере мисс", createdAt: Date Wed Nov 13 2019 23:48:11 GMT+0300 (Moscow Standard Time), author: "polina_volchetskaya", photoLink: "users/polina_volchetskaya/photo.jpg", tags: (1) […], likes: [] }
+
+posts.removePost("15");
+undefined
+posts.getPost("15");
+null
+posts.getPost("16");
+Object { id: "16", description: "хочу уже танцевать под безумие на афтере мисс", createdAt: Date Sun Nov 10 2019 23:02:11 GMT+0300 (Moscow Standard Time), author: "polina_volchetskaya", photoLink: "users/polina_volchetskaya/photo.jpg", tags: (1) […], likes: [] }
+
+posts.getPost("17");
+Object { id: "17", description: "люблю себя и свою жизнь просто так", createdAt: Date Tue Oct 29 2019 23:02:07 GMT+0300 (Moscow Standard Time), author: "veronikchaa", photoLink: "users/veronikchaa/photo.jpg", tags: (3) […], likes: [] }
+
