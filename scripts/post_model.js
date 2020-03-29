@@ -37,6 +37,11 @@ class PostModel {
 		return false;
 	}
 
+	addAll(posts) {
+		var addPost = (post) => this.add(post);
+		posts.every(addPost);
+	}
+
 	edit(id, changes) {
 		if (!this._isExist(id)) {
 			return false;
@@ -70,6 +75,10 @@ class PostModel {
 		if (this._isExist(id)) {
 			this._posts.splice(this._getIndex(id), 1);
 		}
+	}
+
+	clear() {
+		this._posts.splice(0, this._posts.length);
 	}
 
 	static validate(post) {
