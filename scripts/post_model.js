@@ -3,10 +3,9 @@
  * PostModel class
  */
 class PostModel {
-  _posts = [];
+  _posts = new Map();
 
-  _ids = new Set();
-  _standartFilter = {
+  static STANDART_FILTER = {
     author: 'all',
     createdAt: new Date(),
     tags: [],
@@ -17,27 +16,39 @@ class PostModel {
    * @param {array} posts
    */
   constructor(posts) {
-    this._posts = posts.slice(0);
+    this._posts = new Map(posts.map(post => [post.id, post]));
   }
 
   /**
    * Returns top posts skipping first skip posts that fit the filterConfig
    * @param {number} skip
    * @param {number} top
-   * @param {number} filterConfig
+   * @param {object} filterConfig
    * @return {array}
    */
   getPage(skip = 0, top = 10, filterConfig) {
-    const postsFilter = Object.assign({}, standartFilter, filterConfig);
+    const postsFilter = Object.assign({}, PostModel.STANDART_FILTER, filterConfig);
 
-    return this._posts.filter(function(item) {
+    let isSuitable = function(item) {
       return (postsFilter.author === 'all' ||
               item.author === postsFilter.author) &&
-              compareDate(item, postsFilter) >= 0 &&
-              containTags(item, postsFilter.tags);
-    })
-        .sort(this._compareDate)
-        .slice(skip, skip + top);
+              PostModel.compareDate(item, postsFilter) >= 0 &&
+              PostModel.containTags(item, postsFilter.tags);
+    };
+
+    let suitablePosts = [];
+
+    this._posts.forEach(function(value, key, map) {
+      if (isSuitable(value)) {
+        suitablePosts.push(value);
+      }
+    });
+
+    console.log(suitablePosts);
+
+    return suitablePosts
+            .sort(PostModel.compareDate)
+            .slice(skip, skip + top);
   }
   /**
    * Returns a post by its id
@@ -45,7 +56,7 @@ class PostModel {
    * @return {object}
    */
   get(id) {
-    return this._isExist(id) ? this._posts[this._getIndex(id)] : null;
+    return this._posts.has(id) ? this._posts.get(id) : null;
   }
 
   /**
@@ -54,8 +65,8 @@ class PostModel {
    * @return {boolean}
    */
   add(post) {
-    if (PostModel.validate(post)) {
-      this._posts.push(post);
+    if (PostModel.validate(post) && this._posts.has(post.id) !== true) {
+      this._posts.set(post.id, post);
       return true;
     }
     return false;
@@ -66,8 +77,7 @@ class PostModel {
    * @param {array} posts
    */
   addAll(posts) {
-    const addPost = (post) => this.add(post);
-    posts.every(addPost);
+    posts.every((post) => this.add(post));
   }
 
   /**
@@ -77,7 +87,7 @@ class PostModel {
    * @return {boolean}
    */
   edit(id, changes) {
-    if (!this._isExist(id)) {
+    if (!this._posts.has(id)) {
       return false;
     }
 
@@ -98,7 +108,7 @@ class PostModel {
     }
 
     if (PostModel.validate(post)) {
-      this._posts[this._getIndex(id)] = Object.assign({}, post);
+      this._posts.set(id, post);
       return true;
     } else {
       return false;
@@ -110,8 +120,8 @@ class PostModel {
    * @param {string} id
    */
   remove(id) {
-    if (this._isExist(id)) {
-      this._posts.splice(this._getIndex(id), 1);
+    if (this._posts.has(id)) {
+      this._posts.delete(id);
     }
   }
 
@@ -119,7 +129,7 @@ class PostModel {
    * Clears the collection
    */
   clear() {
-    this._posts.splice(0, this._posts.length);
+    this._posts.clear();
   }
 
   /**
@@ -128,33 +138,9 @@ class PostModel {
    * @return {boolean}
    */
   static validate(post) {
-    return (post.id != undefined) &&
+    return post.id != undefined &&
             post.description != undefined &&
             (post.author != undefined && post.author.length != 0);
-  }
-
-
-  /**
-   * Gets index of the post by its id
-   * @param {string} id
-   * @return {number}
-   */
-  _getIndex(id) {
-    for (let i = 0; i < this._posts.length; ++i) {
-      if (this._posts[i].id === id) {
-        return i;
-      }
-    }
-    return -1;
-  }
-
-  /**
-   * Checks if the post exist
-   * @param {string} id
-   * @return {boolean}
-   */
-  _isExist(id) {
-    return this._getIndex(id) != -1;
   }
 
   /**
@@ -163,7 +149,7 @@ class PostModel {
    * @param {Date} second
    * @return {number}
    */
-  _compareDate(first, second) {
+  static compareDate(first, second) {
     return (second.createdAt.getTime() -
             first.createdAt.getTime());
   }
@@ -174,7 +160,7 @@ class PostModel {
    * @param {array} tags
    * @return {boolean}
    */
-  _containTags(item, tags) {
+  static containTags(item, tags) {
     return tags.every(function(tag) {
       return item.tags.some(function(item) {
         return item === tag;
@@ -182,4 +168,3 @@ class PostModel {
     });
   }
 }
-
