@@ -44,12 +44,11 @@ class PostModel {
       }
     });
 
-    console.log(suitablePosts);
-
     return suitablePosts
             .sort(PostModel.compareDate)
             .slice(skip, skip + top);
   }
+  
   /**
    * Returns a post by its id
    * @param {string} id
