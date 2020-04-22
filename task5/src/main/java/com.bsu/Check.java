@@ -11,7 +11,7 @@ public class Check extends HttpServlet {
       HttpServletRequest request,
       HttpServletResponse response) throws IOException {
 
-    var answer = "{\"success\": true}";
+    String answer = "{\"success\": true}";
 
     response.setContentType("application/json");
     response.getOutputStream().println(answer);
