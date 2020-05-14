@@ -1,0 +1,4 @@
+SELECT datediff(
+	NOW(),
+	MIN(CREATED_AT)) AS DAYS
+FROM post;
