@@ -2,6 +2,10 @@
     font-family: Caladea;
   }
 
+  h1 {
+    text-align: center;
+  }
+
   header {
     background: white;
     padding: 0px 1%; 
@@ -64,7 +68,7 @@
   .feed {
     background: #F8EEFF;
     color: #7414B1;
-  	width: 40%;
+  	width: 45%;
     border-radius: 20px;
   	display: inline-block;
     border: 1px solid #BDBABF;
@@ -124,24 +128,29 @@
   }
 
   .feed-post-add {
-    position: relative;
-    font-size: 200%;
-    color: grey;
+    font-size: 150%;
+    width: 80%;
+    height: 40%;
+    color: black;
+    border: none;
+    resize: none;
+    padding: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
 
   .feed-post-add-image {
     width: 35px;
     height: 35px;
-    margin-top: 4%;
+    background-color: white;
+    margin-left: 15%;
   }
 
   .feed-post-add-tweet {
     background: #7414B1;
     color: white;
     position: absolute;
-    left: 80%;
-    margin-right: 20%;
-    top: 60%;
+    right: 35px;
+    top: 75%;
     border-radius: 100px;
     padding: 5px 20px;
   }
@@ -214,21 +223,12 @@
     border-top: 1px solid #BDBABF;
   }
 
-  .filter-date {
+  .filter-select {
     background: #C7B0D5;
     border-radius: 60px;
-    font-style: italic;
-    font-size: 80%;
-  }
-
-  .enter {
-    display: inline-flex;
-    color: grey;
-    border: 1px solid grey;
-    font-style: italic;
-    font-size: 60%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50%;
   }
 
   .filter-tag {
@@ -253,4 +253,8 @@
     vertical-align: middle;
     border-radius: 200px;
     border: none;
+  }
+
+  footer {
+    text-align: center;
   }

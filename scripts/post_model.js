@@ -29,26 +29,26 @@ class PostModel {
   getPage(skip = 0, top = 10, filterConfig) {
     const postsFilter = Object.assign({}, PostModel.STANDART_FILTER, filterConfig);
 
-    let isSuitable = function(item) {
+    let isSuitable = function (item) {
       return (postsFilter.author === 'all' ||
-              item.author === postsFilter.author) &&
-              PostModel.compareDate(item, postsFilter) >= 0 &&
-              PostModel.containTags(item, postsFilter.tags);
+        item.author === postsFilter.author) &&
+        PostModel.compareDate(item, postsFilter) >= 0 &&
+        PostModel.containTags(item, postsFilter.tags);
     };
 
     let suitablePosts = [];
 
-    this._posts.forEach(function(value, key, map) {
+    this._posts.forEach(function (value, key, map) {
       if (isSuitable(value)) {
         suitablePosts.push(value);
       }
     });
 
     return suitablePosts
-            .sort(PostModel.compareDate)
-            .slice(skip, skip + top);
+      .sort(PostModel.compareDate)
+      .slice(skip, skip + top);
   }
-  
+
   /**
    * Returns a post by its id
    * @param {string} id
@@ -90,7 +90,7 @@ class PostModel {
       return false;
     }
 
-    const isMutable = function(change) {
+    const isMutable = function (change) {
       return change !== 'id' &&
         change !== 'createdAt' &&
         change !== 'author';
@@ -117,10 +117,14 @@ class PostModel {
   /**
    * Removes the post by its id
    * @param {string} id
+   * @return {boolean}
    */
   remove(id) {
     if (this._posts.has(id)) {
       this._posts.delete(id);
+      return true;
+    } else {
+      return false;
     }
   }
 
@@ -138,8 +142,8 @@ class PostModel {
    */
   static validate(post) {
     return post.id != undefined &&
-            post.description != undefined &&
-            (post.author != undefined && post.author.length != 0);
+      post.description != undefined &&
+      (post.author != undefined && post.author.length != 0);
   }
 
   /**
@@ -150,7 +154,7 @@ class PostModel {
    */
   static compareDate(first, second) {
     return (second.createdAt.getTime() -
-            first.createdAt.getTime());
+      first.createdAt.getTime());
   }
 
   /**
@@ -160,8 +164,8 @@ class PostModel {
    * @return {boolean}
    */
   static containTags(item, tags) {
-    return tags.every(function(tag) {
-      return item.tags.some(function(item) {
+    return tags.every(function (tag) {
+      return item.tags.some(function (item) {
         return item === tag;
       });
     });
